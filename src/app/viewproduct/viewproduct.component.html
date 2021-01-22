@@ -1,0 +1,28 @@
+
+<div class="panel panel-primary"  [ngStyle]="{'background-image': getUrl(),'height' : '100%', 'background-size' : 'cover'}">
+  <br>
+
+  <div class="container">
+    <h2>Selected Product is..</h2>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-info">
+          <td>{{product.id}}</td>
+          <td>{{product.productName}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-dark" (click)="goToList()">Back</button>
+  </div>
+  

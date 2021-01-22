@@ -1,0 +1,36 @@
+<div class="panel panel-default"  [ngStyle]="{'background-image': getUrl(),'height' : '750px', 'background-size' : 'cover'}">
+<br>
+<div class="container">
+  <h1>Welcome To Admin Home Page</h1>
+  <p>He has all rights to perform CRUD operation..</p>
+  <br>
+    <h2>List of Products</h2>
+    <p>Use Actions to perform CRUD operation</p> 
+    <br>           
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Product Description</th>
+          <th>Product Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of value">
+          <td>{{product.id}}</td>
+          <td>{{product.productName}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="goToEditProduct(product.id)">Edit</button>&nbsp;
+            <button type="button" class="btn btn-info" (click)="goToViewProduct(product.id)">View</button>&nbsp;
+            <button type="button" class="btn btn-danger" (click)="goTodeleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+       
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="goToAddProduct()">Add new product</button>
+  </div>
